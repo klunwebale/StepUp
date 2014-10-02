@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>StepUp</title>
+<link rel='stylesheet' href="lib/bootstrap/css/bootstrap.min.css" />
+<link rel='stylesheet'
+	href="lib/jquery-ui-1.10.4.custom/css/pepper-grinder/jquery-ui-1.10.4.custom.min.css" />
+<script type="text/javascript" src="lib/jquery_1_9_1.js"></script>
+<script type="text/javascript"
+	src="lib/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="lib/site.js"></script>
+<script type="text/javascript" src="lib/Chart.min.js"></script>
+<script type="text/javascript" src="lib/arbor/arbor.js"></script>
+<script type="text/javascript" src="lib/arbor/renderer.js"></script>
+<script type="text/javascript" src="lib/arbor/graphics.js"></script>
+<link rel="stylesheet" type="text/css" href="lib/main.css">
+<script>
+
+</script>
+</head>
+<body>
+	<div class='container-fluid' style="margin-top: 20px">
+		<div class='row'>
+			<div class="col-sm-8">
+				<div>
+					<form class="form-inline" role="form">
+					  <div class="form-group">
+					    <label for="txtDanceSearch">Node1</label>
+					    <input type="text" class="form-control" style="width: 170px" id="txtDanceSearch" placeholder="Search Dance / moves">
+					  </div>
+					  <div class="form-group">
+					    <label for="txtDanceSearch2" style="margin-left: 15px">Node2</label>
+					    <input type="text" class="form-control" style="width: 170px" id="txtDanceSearch2" placeholder="Search Dance / moves">
+					  </div>
+					  <input type="text" class="form-control" style="width: 130px;margin-left:10px" id="CateSearch" placeholder="Search category">
+					  <input type="text" class="form-control" style="width: 130px;margin-left:10px" id="CateSearch1" placeholder="Search category">
+					  <div class="form-group">
+							<div class="btn-group">
+								<button style="margin-left:10px" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+									Perform <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a class="dance_action" data-action="Moves" href="#">Dance Details</a></li>
+									<li><a class="dance_action" data-action="Classification" href="#">Classification</a></li>
+									<li><a class="dance_action" data-action="Centrality" href="#">Centrality Analysis</a></li>
+									<li><a class="dance_action" data-action="ClosestDance" href="#">Closest Dances</a></li>
+								</ul>
+							</div>
+						</div>
+					</form>
+				</div>
+				 <hr class="line"/>
+				<canvas id="viewport" width="900" height="700" ></canvas>
+			</div>
+			<div class="col-sm-4" >
+				<div id="dance_data" style="display: none;background-color:black;color:white;padding-left:5px;padding-right:5px;margin-right:-20px;margin-top:-20px;margin-left:30px">
+					<div id="dance_name" style="padding-top:5px">
+						<label style="font-style: italic;color:red">Name:</label><br/>
+						<span class="dance_name" id="dance_name1"></span>
+					</div>
+					<hr>
+					<div id="dance_image">
+						<img id="dance_image1" />
+					</div>
+					<hr>
+					<div id="dance_DESC" >
+						<label style="font-style: italic;color:red">Description</label><br/>
+						<span  id="dance_desc1"></span>
+					</div>
+					<hr>
+					<div id="dance_link" style="padding-bottom:5px">
+						<label style="font-style: italic;color:red">Dbpedia Link</label><br/>
+						<a class="link" id="dance_link1"></a>
+					</div>
+				</div>
+				<div id="videoList" style="display: none;margin-top:-20px;margin-right:-20px:margin-left:15px">
+					<div id="youtube_video" ></div>
+					<div id="video_playlist" style='height: 1000px; overflow: auto; font-size: 0.9em;margin-right:-20px'>
+						&nbsp;</div>
+				</div>
+
+			</div>
+</body>
+</html>

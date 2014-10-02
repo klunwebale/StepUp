@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>arbor.js » halfviz</title>
+
+	<script src="../_/jquery-1.6.1.min.js"></script>
+	<script src="../_/jquery.address-1.4.min.js"></script>
+	<script src="../../lib/arbor.js"></script>
+	<script src="../_/graphics.js"></script>
+
+	<!-- the halfviz source, broken out one ‘class’ per file -->
+	
+	<script src="src/renderer.js"></script>
+
+	<!-- the main driver code: start here -->
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var sys = arbor.ParticleSystem(1000, 800, 0.5) // create the system with sensible repulsion/stiffness/friction
+		    sys.parameters({gravity:true}) // use center-gravity to make the graph settle nicely (ymmv)
+		    sys.renderer = Renderer("#viewport") // our newly created renderer will have its .init() method called shortly by sys...
+
+		    // add some nodes to the graph and watch it go...
+		    sys.addNode('a', {'color':'red', 'shape' : 'dot', 'label' : 'Salsa'});
+		    sys.addNode('b', {'color':'blue', 'shape' : 'rect', 'label' : 'Cha cha'});
+		    sys.addNode('c', {'color':'blue', 'shape' : 'rect', 'label' : 'Ballroom Cha cha'});
+		    sys.addEdge('a','b')
+		    sys.addEdge('a','c')
+		    sys.addEdge('b','c')
+
+		});
+	</script>
+
+</head>
+<body>
+    <canvas id="viewport" width="800" height="600"></canvas>
+    
+
+  
+
+</body>
+</html>
